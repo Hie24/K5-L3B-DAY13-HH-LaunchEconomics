@@ -4,7 +4,7 @@
 
 - Họ tên: Lê Ngọc Khánh
 - MSSV: 2A202603804
-- Email: (tự điền)
+- Email: lekhanh2k5@gmail.com
 - GitHub: lekhanh2k5-dotcom
 - Vai trong nhóm (nhóm 3 người kiêm nhiệm): Người gắn nhãn 1; kiêm người viết code và kiểm số cho nhiệm vụ D (pilot) và E1–E2 (chỉ số, rủi ro).
 
