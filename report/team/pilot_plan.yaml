@@ -37,7 +37,7 @@
 
 pilot:
   owner: "Giám đốc vận hành LogiX-VN"
-  scope: "Chỉ loại noi_dia và hang_nang (81,8% yêu cầu; mở lại 7 ngày 3,97%), ở 12 depot; loại quoc_te và doi_tac. Hệ số chi phí so với 12.000 đ chốt theo bảng A3 (issue #2, simulated)"
+  scope: "Chỉ loại noi_dia (0,22× so với 12.000 đ, simulated) và hang_nang (0,69×, simulated) theo bảng A3: 81,8% yêu cầu, mở lại 7 ngày 3,97%, ở 12 depot. Loại quoc_te (1,88×, simulated; thành công 27,33%) và doi_tac (0,85×, simulated; thành công 54,41%)"
   assignment:
     unit: "staff"
     control_share: 0.5
@@ -66,6 +66,6 @@ pilot:
   decision_date: "2027-01-12"
   simulated_inputs:
     - "phut_xem_lai_simulated và phut_lam_lai_simulated (logix_requests.csv)"
-    - "chi phí mỗi việc thành công A2, hệ số theo loại A3 dùng để chọn scope (issue #2)"
+    - "chi phí mỗi việc thành công A2 và hệ số theo loại A3 (0,22× · 0,69× · 1,88× · 0,85×) dùng để chọn scope (issue #2)"
     - "bảng độ nhạy B1–B4 (issue #3)"
     - "ngưỡng 10.000 đ trong luật dừng chi phí (dựa trên chi phí đã tính từ phút simulated)"
