@@ -6,8 +6,6 @@
 
 Người gắn nhãn 1: ... · Người phụ trách bộ nhãn 2: DoLyHoangNam (issue #8).
 
-Bộ nhãn 2 gồm 20 ca trong đề Word, chờ Nam kiểm tra và xác nhận. Tính độc lập của lượt gắn nhãn chưa được xác nhận; khi tổng hợp cần đối chiếu bản gốc có mốc lưu trước khi so nhãn. Chưa tính đồng thuận hoặc thống nhất nhãn; phần review D của issue #8 chưa thực hiện.
-
 | Ca | Nhãn người 1 | Nhãn bộ 2 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
 | 1 | ... | Do người dùng | ... | ... |
