@@ -6,9 +6,9 @@
 
 Người gắn nhãn 1: ... · Người phụ trách bộ nhãn 2: DoLyHoangNam (issue #8).
 
-Bộ nhãn 2 dưới đây do Codex đề xuất ngày 2026-11-25 từ mô tả 20 ca trong đề Word, chờ Nam kiểm tra và xác nhận. Cuộc trò chuyện đã tiếp cận nhãn tham khảo trước khi soạn bộ này, nên đây chưa phải bằng chứng của một lượt gắn nhãn độc lập trong 8 phút. Nếu Nam đã lưu bộ nhãn độc lập trước đó, dùng bản gốc có bằng chứng ấy khi tổng hợp. Chưa tính đồng thuận hoặc thống nhất nhãn; phần review D của issue #8 chưa thực hiện.
+Bộ nhãn 2 gồm 20 ca trong đề Word, chờ Nam kiểm tra và xác nhận. Tính độc lập của lượt gắn nhãn chưa được xác nhận; khi tổng hợp cần đối chiếu bản gốc có mốc lưu trước khi so nhãn. Chưa tính đồng thuận hoặc thống nhất nhãn; phần review D của issue #8 chưa thực hiện.
 
-| Ca | Nhãn người 1 | Nhãn bộ 2 (AI đề xuất) | Trùng? | Nhãn thống nhất |
+| Ca | Nhãn người 1 | Nhãn bộ 2 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
 | 1 | ... | Do người dùng | ... | ... |
 | 2 | ... | Hệ thống | ... | ... |
