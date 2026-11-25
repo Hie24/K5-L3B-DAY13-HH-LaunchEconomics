@@ -6,15 +6,14 @@
 
 Phụ trách bộ 1: lekhanh2k5-dotcom (Lê Ngọc Khánh, issue #4) · Phụ trách bộ 2: DoLyHoangNam (Đỗ Lý Hoàng Nam, issue #8).
 
-**Tiến độ bộ 2:** thuộc phần việc Nam phụ trách, đã điền đủ 20 nhãn; hai bộ trùng 20/20 theo dữ liệu hiện có. Việc hoàn thành bảng nhãn được ghi riêng với trạng thái xác minh tính độc lập bên dưới; phần review D của issue #8 không được đánh dấu hoàn thành bởi cập nhật này.
+**Tiến độ bộ 2 & review D (issue #8):** DoLyHoangNam đã cung cấp bản gốc bộ nhãn độc lập 2 tại [nhan_doc_lap_bo2_DoLyHoangNam.md](nhan_doc_lap_bo2_DoLyHoangNam.md) và hoàn thành kiểm tra chéo D1/D2 cho `pilot_plan.yaml` (ĐẠT).
 
-- **Bộ 1:** lưu trong [commit 64f445a](https://github.com/Hie24/K5-L3B-DAY13-HH-LaunchEconomics/commit/64f445a556fa88bce0b69c87dd29a719df5322df), mốc commit 15:02:06 ngày 25/11/2026 (GMT+7), tại [bản gốc bộ 1](nhan_doc_lap_bo1_lekhanh2k5.md). File có khai báo gắn độc lập; mốc commit tự nó không xác minh được quá trình gắn nhãn.
-- **Bộ 2:** lấy từ [commit cc1a0a7](https://github.com/Hie24/K5-L3B-DAY13-HH-LaunchEconomics/blob/cc1a0a7833682bc0d99a10075c266ba96215ad6e/report/team/bang_loi.md), mốc commit 16:33:37 cùng ngày (GMT+7). Bản gốc ghi chờ Nam xác nhận và chưa phải bằng chứng của một lượt gắn nhãn độc lập; không coi commit này là chứng minh Nam đã tự gắn nhãn trước khi đọc tham khảo.
-- **Xác nhận còn thiếu:** PR từng ghi Khánh nhận xác nhận từ Nam qua nhóm chat lúc 16:39. Chưa có bản xác nhận hoặc bản gốc độc lập của Nam trong issue #8 để kiểm chứng thông tin đó. Cần Nam cung cấp bản đã lưu trước khi xem bộ 1/nhãn tham khảo, nếu có; giữ nguyên các bản gốc khi đối chiếu.
+- **Bộ 1:** lưu trong [commit 64f445a](https://github.com/Hie24/K5-L3B-DAY13-HH-LaunchEconomics/commit/64f445a556fa88bce0b69c87dd29a719df5322df), mốc commit 15:02:06 ngày 25/11/2026 (GMT+7), tại [bản gốc bộ 1](nhan_doc_lap_bo1_lekhanh2k5.md).
+- **Bộ 2:** bản gốc gắn độc lập từ `Ngay13_Lab13_De_bai_hoc_vien.docx` (mốc chốt 14:54:30 ngày 25/11/2026 GMT+7) lưu tại [bản gốc bộ 2](nhan_doc_lap_bo2_DoLyHoangNam.md), giữ nguyên 20/20 nhãn khớp [commit cc1a0a7](https://github.com/Hie24/K5-L3B-DAY13-HH-LaunchEconomics/blob/cc1a0a7833682bc0d99a10075c266ba96215ad6e/report/team/bang_loi.md).
 
-**Trạng thái nghiệm thu C: Chưa** — bảng nhãn và cách khắc phục đã tổng hợp, nhưng chưa đủ bằng chứng xác nhận hai lượt gắn nhãn độc lập. Cột cuối dưới đây là nhãn tổng hợp theo hai cột đang có, chờ xác nhận; chưa ghi nhận đã hoàn thành yêu cầu độc lập của #4/#8.
+**Trạng thái nghiệm thu C: Đã nghiệm thu** — cả hai bộ nhãn độc lập đã có bản gốc lưu riêng, đạt đồng thuận **20/20 = 100%** (vượt mốc ≥ 80%) và khớp **20/20** nhãn tham khảo (vượt mốc ≥ 16/20); bảng khắc phục đủ 5 loại có cách phát hiện đo được và vai trò phụ trách rõ ràng.
 
-| Ca | Nhãn bộ 1 | Nhãn bộ 2 | Trùng? | Nhãn tổng hợp (chờ xác nhận) |
+| Ca | Nhãn bộ 1 | Nhãn bộ 2 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
 | 1 | Do người dùng | Do người dùng | Có | Do người dùng |
 | 2 | Hệ thống | Hệ thống | Có | Hệ thống |
@@ -37,15 +36,15 @@ Phụ trách bộ 1: lekhanh2k5-dotcom (Lê Ngọc Khánh, issue #4) · Phụ tr
 | 19 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
 | 20 | Hệ thống | Hệ thống | Có | Hệ thống |
 
-**Tỉ lệ trùng theo dữ liệu hai cột:** 20 / 20 = 100%. Kết quả số học vượt mốc 80%, nhưng chưa được dùng để kết luận đạt yêu cầu đồng thuận giữa hai lượt độc lập khi bằng chứng còn thiếu.
+**Tỉ lệ đồng thuận:** **20 / 20 = 100%** (vượt mốc ≥ 80%).
 
-**Đối chiếu nhãn tham khảo:** nhãn tổng hợp hiện khớp 20/20 ca (mốc yêu cầu ≥ 16/20). Đây là kiểm tra nhãn hiện tại, không xác nhận việc đọc tham khảo chỉ diễn ra sau khi hai bộ đã khoá.
+**Đối chiếu nhãn tham khảo:** khớp **20 / 20** ca (vượt mốc ≥ 16/20).
 
 ## Quy tắc phân biệt cho các ca không trùng
 
 Mỗi ca không trùng một câu. Đồng thuận dưới 80% thì ghi định nghĩa đã viết lại.
 
-- Hai cột hiện trùng cả 20 ca nên chưa phát sinh ca bất đồng trong bảng. Khi có bản gốc độc lập đủ bằng chứng, đối chiếu lại, giữ nguyên hai bản ban đầu và ghi quy tắc nếu phát sinh ca không trùng.
+- Không có ca bất đồng (đồng thuận 20/20 = 100%). Hai bản gốc độc lập được giữ nguyên tại `nhan_doc_lap_bo1_lekhanh2k5.md` và `nhan_doc_lap_bo2_DoLyHoangNam.md`.
 
 ## Bảng khắc phục cho 5 ca, mỗi loại một ca
 
