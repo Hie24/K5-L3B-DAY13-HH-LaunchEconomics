@@ -6,6 +6,8 @@
 
 Phụ trách bộ 1: lekhanh2k5-dotcom (Lê Ngọc Khánh, issue #4) · Phụ trách bộ 2: DoLyHoangNam (Đỗ Lý Hoàng Nam, issue #8).
 
+**Tiến độ bộ 2:** thuộc phần việc Nam phụ trách, đã điền đủ 20 nhãn; hai bộ trùng 20/20 theo dữ liệu hiện có. Việc hoàn thành bảng nhãn được ghi riêng với trạng thái xác minh tính độc lập bên dưới; phần review D của issue #8 không được đánh dấu hoàn thành bởi cập nhật này.
+
 - **Bộ 1:** lưu trong [commit 64f445a](https://github.com/Hie24/K5-L3B-DAY13-HH-LaunchEconomics/commit/64f445a556fa88bce0b69c87dd29a719df5322df), mốc commit 15:02:06 ngày 25/11/2026 (GMT+7), tại [bản gốc bộ 1](nhan_doc_lap_bo1_lekhanh2k5.md). File có khai báo gắn độc lập; mốc commit tự nó không xác minh được quá trình gắn nhãn.
 - **Bộ 2:** lấy từ [commit cc1a0a7](https://github.com/Hie24/K5-L3B-DAY13-HH-LaunchEconomics/blob/cc1a0a7833682bc0d99a10075c266ba96215ad6e/report/team/bang_loi.md), mốc commit 16:33:37 cùng ngày (GMT+7). Bản gốc ghi chờ Nam xác nhận và chưa phải bằng chứng của một lượt gắn nhãn độc lập; không coi commit này là chứng minh Nam đã tự gắn nhãn trước khi đọc tham khảo.
 - **Xác nhận còn thiếu:** PR từng ghi Khánh nhận xác nhận từ Nam qua nhóm chat lúc 16:39. Chưa có bản xác nhận hoặc bản gốc độc lập của Nam trong issue #8 để kiểm chứng thông tin đó. Cần Nam cung cấp bản đã lưu trước khi xem bộ 1/nhãn tham khảo, nếu có; giữ nguyên các bản gốc khi đối chiếu.
