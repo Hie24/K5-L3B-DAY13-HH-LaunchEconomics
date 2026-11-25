@@ -130,6 +130,37 @@ def nhiem_vu_d1(reqs):
             'mo_lai': mo_lai.mean(), 'mo_lai_pv': mo_lai[trong_pv].mean(), 'ngay_du_m': ngay_du_m}
 
 
+# ---------- Nhiệm vụ E1 · Tính thử ba chỉ số (issue #6, lekhanh2k5-dotcom) ----------
+def _ti_le(mask, mau):
+    """(tử, mẫu, tỉ lệ) để ghi đủ tử số / mẫu số trong chi_so.md."""
+    tu, n = int(mask.sum()), int(len(mau))
+    return tu, n, (tu / n if n else float('nan'))
+
+
+def nhiem_vu_e1(reqs):
+    """Ba chỉ số của đợt chạy thử (không có đối chứng: chỉ mô tả, không kết luận trợ lý gây ra thay đổi)."""
+    r = reqs.copy()
+    for cot in ('dong_trong_24h', 'mo_lai_trong_7_ngay', 'duoc_xem_lai'):
+        r[cot] = r[cot].astype(int)
+    pv = r[r.loai.isin(PHAM_VI)]
+    ket = {}
+    print('\nNhiệm vụ E1 · chỉ số trong đợt chạy thử (cả mẫu | phạm vi noi_dia + hang_nang)')
+    for ten, ham in (
+        ('chinh', lambda d: ((d.dong_trong_24h == 1) & (d.mo_lai_trong_7_ngay == 0), d)),
+        ('dung_bo_qua', lambda d: (d[d.duoc_xem_lai == 1].quyet_dinh_xem_lai.isin(['sua', 'bo']),
+                                   d[d.duoc_xem_lai == 1])),
+        ('an_toan_mo_lai', lambda d: (d.mo_lai_trong_7_ngay == 1, d)),
+        ('lam_lai', lambda d: (d.ket_qua == 'lam_lai', d)),
+        ('chuyen_nhan_vien', lambda d: (d.ket_qua == 'chuyen_nhan_vien', d)),
+        ('duoc_xem_lai', lambda d: (d.duoc_xem_lai == 1, d)),
+    ):
+        ca = _ti_le(*ham(r))
+        p = _ti_le(*ham(pv))
+        ket[ten] = {'ca_mau': ca, 'pham_vi': p}
+        print(f'  {ten:17s} {ca[2]:7.2%} ({ca[0]}/{ca[1]})  |  {p[2]:7.2%} ({p[0]}/{p[1]})')
+    return ket
+
+
 if __name__ == '__main__':
     runs = pd.read_csv('logix_runs.csv')
     reqs = pd.read_csv('logix_requests.csv', keep_default_na=False)
@@ -141,3 +172,5 @@ if __name__ == '__main__':
     # TODO CP2 · Nhiệm vụ B: đổi từng yếu tố, ghi vào bảng độ nhạy.
     # CP4 · Nhiệm vụ D1: cỡ mẫu (issue #5).
     nhiem_vu_d1(reqs)
+    # CP5 · Nhiệm vụ E1: tính thử ba chỉ số (issue #6).
+    nhiem_vu_e1(reqs)
