@@ -12,7 +12,7 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Nguyễn Đức Hiếu | (Hiếu điền) | (Hiếu điền) | Hie24 | Nhóm trưởng; người viết code A1–A4 (#1, #2); tích hợp, duyệt chéo Gate 2a, nộp bài (#9) |
+|   1 | Nguyễn Đức Hiếu | 2A202603772 | 11236106@st.neu.edu.vn | Hie24 | Nhóm trưởng; người viết code A1–A4 (#1, #2); tích hợp, duyệt chéo Gate 2a, nộp bài (#9) |
 |   2 | Đỗ Lý Hoàng Nam | 2A202603777 | dolyhoangnam13072005@gmail.com | DoLyHoangNam | Người gắn nhãn 2 kiêm giữ hồ sơ; độ nhạy B1–B4 (#3), hồ sơ launch và báo cáo nhóm (#7), review D (#8) |
 |   3 | Lê Ngọc Khánh | 2A202603804 | lekhanh2k5@gmail.com | lekhanh2k5-dotcom | Người gắn nhãn 1; viết code và kiểm số D (#5), E1–E2 (#6); tổng hợp bảng lỗi C (#4) |
 
@@ -35,21 +35,24 @@ report/team/MSSV_HoTen.md
 
 Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
-Sao chép mục dưới đây cho từng thành viên.
-
-## HoVaTen-MSSV
+## NguyenDucHieu-2A202603772
 
 ### Phần việc phụ trách
 
--
+- #1, #2: mô hình chi phí A1–A4, phân tích theo loại yêu cầu, chi phí cố định và bảng chi phí phần A.
+- #9: phân công issue, review PR, tích hợp mã và kiểm tra hồ sơ trước khi nộp.
 
 ### Đóng góp cụ thể
 
--
+- Viết ba hàm A1 và `mo_hinh()` có tham số giá, hệ số lao động và giới hạn lần chạy; bổ sung bảng A3–A4 và phép tính tay đối chiếu.
+- Kết quả: 978 việc thành công; 4.471,97 đ/việc toàn mẫu; phạm vi pilot cộng cố định 4.599,09 đ/việc ở 45.000 yêu cầu/tháng (simulated).
+- Xử lý conflict A/B, bổ sung test tích hợp (22/22 đạt), đồng bộ thiết kế chống hoàn trùng trong C/D/E và rà thiếu sót hồ sơ.
+- Điều phối còn chờ: phiếu duyệt chéo thực tế, xác nhận chạy trên máy thành viên khác và nộp LMS.
 
 ### Bằng chứng
 
--
+- PR #11 (`9634fa8`), PR #13 (`17b8e72`), PR #17 (`db47e2d`, `eb579f6`).
+- Báo cáo cá nhân: [2A202603772_NguyenDucHieu.md](report/team/2A202603772_NguyenDucHieu.md).
 
 ## LeNgocKhanh-2A202603804
 
@@ -61,9 +64,9 @@ Sao chép mục dưới đây cho từng thành viên.
 
 ### Đóng góp cụ thể
 
-- D1 năm câu (1.251 · DE 2,48, 84 > 40 · trần 1.000 · trần 300 · m ≥ 299, DE 6,96), power 0,64; pilot 20 + 20 nhân viên, 4 luật dừng, quyết định 2027-01-12.
+- D1 năm câu (1.251 · DE 2,48, 84 > 40 · trần 1.000 · trần 300 · m ≥ 299, DE 6,96), power 0,64; pilot 20 + 20 nhân viên, 5 luật dừng sau cập nhật PR #17, quyết định 2027-01-12.
 - E1: 82,83% · 27,12% · 4,25%; 2 chỉ số đề xuất, 10 event có `trace_id`, 3 dòng rủi ro kinh tế.
-- C: bộ nhãn 1 khoá ở commit `64f445a` trước khi xem bộ 2; hai cột trùng 20/20 theo số học, nghiệm thu C chờ Nam xác nhận bộ 2 ở issue #8; bảng khắc phục 5 ca.
+- C: lưu bộ nhãn 1 tại commit `64f445a`; tổng hợp bảng 20 ca và bảng khắc phục 5 loại. Hai cột nhãn trùng 20/20; hồ sơ bộ 2 được bổ sung trong PR #19.
 - Giải xung đột `src/lab13.py` (B và D1), hạ ngưỡng luật dừng chi phí từ 10.000 đ xuống 6.000 đ có lý do bằng số.
 
 ### Bằng chứng
