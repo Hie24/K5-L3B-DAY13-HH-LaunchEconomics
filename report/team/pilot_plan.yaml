@@ -58,7 +58,7 @@ pilot:
     predeclared: "Có: chỉ số chính, mde 0.06, ngưỡng luật dừng, decision_date chốt trong file này trước 2026-12-07; bốc thăm seed 13, phân tầng theo depot"
   stop_rules:
     - "NẾU tỉ lệ mở lại 7 ngày của nhóm trợ lý cao hơn đối chứng từ 2 điểm trở lên hoặc vượt 6% (hiện tại 3,97% trong phạm vi), hoặc kiểm tra sổ cái phát hiện từ 1 ca hoàn trùng trở lên TRONG 3 ngày liên tiếp THÌ Giám đốc vận hành tắt trợ lý trong 30 phút và chuyển toàn bộ yêu cầu về nhân viên tự làm KHÔNG THÌ không được chuyển sang bước rollout tiếp theo"
-    - "NẾU chi phí mỗi việc thành công của nhóm trợ lý vượt 10.000 đ (simulated; dưới mức nhân viên tự làm 12.000 đ) TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp về noi_dia và giới hạn 2 lần chạy trong 2 ngày làm việc KHÔNG THÌ không được mở thêm hang_nang hay tăng tỉ lệ rollout"
+    - "NẾU chi phí mỗi việc thành công của nhóm trợ lý vượt 6.000 đ (simulated; khoảng 1,3× mức 4.599 đ đã cộng cố định của phạm vi ở A4, dưới kịch bản làm lại ×2 là 6.787 đ ở B1) TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp về noi_dia và giới hạn 2 lần chạy trong 2 ngày làm việc KHÔNG THÌ không được mở thêm hang_nang hay tăng tỉ lệ rollout"
     - "NẾU tỉ lệ bỏ qua gợi ý (sửa + bỏ trên số được xem lại) vượt 40% (đợt chạy thử: 27,12% = 48/177) TRONG 1 tuần THÌ Trưởng nhóm CSKH phỏng vấn 5 nhân viên và rà 20 trace trong 3 ngày làm việc KHÔNG THÌ không được chuyển sang bước rollout tiếp theo"
     - "NẾU kiểm tra mẫu hằng tuần của Kế toán phát hiện từ 1% đơn hoàn sai tiền trở lên mà không ai mở lại (lỗi ngầm) TRONG 1 tuần THÌ Kế toán trưởng khoá trợ lý ở bước rollout hiện tại và đối soát toàn bộ đơn của tuần đó trong 2 ngày làm việc KHÔNG THÌ không được tính tuần đó vào cỡ mẫu của chỉ số chính"
   interim_looks: "chỉ kiểm tra chỉ số an toàn và chi phí hằng tuần (mở lại 7 ngày, hoàn trùng, kiểm tra mẫu sổ cái); không xem chỉ số chính trước 2027-01-12 để tránh dừng sớm vì nhiễu"
@@ -68,4 +68,4 @@ pilot:
     - "phut_xem_lai_simulated và phut_lam_lai_simulated (logix_requests.csv)"
     - "chi phí mỗi việc thành công A2 và hệ số theo loại A3 (0,22× · 0,69× · 1,88× · 0,85×) dùng để chọn scope (issue #2)"
     - "bảng độ nhạy B1–B4 (issue #3)"
-    - "ngưỡng 10.000 đ trong luật dừng chi phí (dựa trên chi phí đã tính từ phút simulated)"
+    - "ngưỡng 6.000 đ trong luật dừng chi phí (từ A4 4.599 đ và B1 6.787 đ, đều tính từ phút simulated)"
