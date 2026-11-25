@@ -28,7 +28,7 @@
 
 - PR #10 (D), PR #12 (E1–E2) trên repo nhóm.
 - Commit: `ddc23d5` (D1 + pilot_plan), `b0233a5` và `f8395c5` (scope theo A3, B3), `b17cc57` (ngưỡng chi phí 6.000 đ), `f04a3e2` (E1 + chi_so), `4e889a4` và `621101b` (E2), `64f445a` (bộ nhãn 1 khoá lúc 15:02:06), `e83c83c` (bảng khắc phục).
-- Kiểm tra đã chạy: `python lab13.py` in ba phép thử ĐẠT và chạy hết; `python -m unittest test_lab13 test_sensitivity` 22 test OK; `yaml.safe_load` đọc được `pilot_plan.yaml`; không còn dấu `?` ngoài chú thích; `grep -rni production report/team` không in gì.
+- Kiểm tra đã chạy: `python lab13.py` in ba phép thử ĐẠT và chạy hết; `python -m unittest test_lab13 test_sensitivity` 22 test OK; `yaml.safe_load` đọc được `pilot_plan.yaml`; không còn dấu `?` ngoài chú thích; quét `report/team` không thấy từ bị cấm theo quy tắc 5 của README.
 
 ## 5. Công cụ AI đã dùng
 
