@@ -4,38 +4,40 @@
 
 ## Hai bộ nhãn độc lập
 
-Người gắn nhãn 1: ... · Người gắn nhãn 2: ... (gắn trong 8 phút, không trao đổi)
+Người gắn nhãn 1: lekhanh2k5-dotcom (Lê Ngọc Khánh, issue #4) · Người gắn nhãn 2: DoLyHoangNam (Đỗ Lý Hoàng Nam, issue #8) (gắn trong 8 phút, không trao đổi)
+
+Bằng chứng độc lập: bộ 1 được khoá trong commit `64f445a` lúc 15:02:06 ngày 25/11, trước khi xem bộ 2 (file `report/team/nhan_doc_lap_bo1_lekhanh2k5.md`). Hai bộ ban đầu giữ nguyên; chỉ cột "Nhãn thống nhất" được điền sau khi so.
 
 | Ca | Nhãn người 1 | Nhãn người 2 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
-| 1 | ... | ... | ... | ... |
-| 2 | ... | ... | ... | ... |
-| 3 | ... | ... | ... | ... |
-| 4 | ... | ... | ... | ... |
-| 5 | ... | ... | ... | ... |
-| 6 | ... | ... | ... | ... |
-| 7 | ... | ... | ... | ... |
-| 8 | ... | ... | ... | ... |
-| 9 | ... | ... | ... | ... |
-| 10 | ... | ... | ... | ... |
-| 11 | ... | ... | ... | ... |
-| 12 | ... | ... | ... | ... |
-| 13 | ... | ... | ... | ... |
-| 14 | ... | ... | ... | ... |
-| 15 | ... | ... | ... | ... |
-| 16 | ... | ... | ... | ... |
-| 17 | ... | ... | ... | ... |
-| 18 | ... | ... | ... | ... |
-| 19 | ... | ... | ... | ... |
-| 20 | ... | ... | ... | ... |
+| 1 | Do người dùng | (chờ bộ 2) | | |
+| 2 | Hệ thống | (chờ bộ 2) | | |
+| 3 | Ngữ cảnh | (chờ bộ 2) | | |
+| 4 | Giới hạn hệ thống | (chờ bộ 2) | | |
+| 5 | Ngầm | (chờ bộ 2) | | |
+| 6 | Do người dùng | (chờ bộ 2) | | |
+| 7 | Hệ thống | (chờ bộ 2) | | |
+| 8 | Hệ thống | (chờ bộ 2) | | |
+| 9 | Do người dùng | (chờ bộ 2) | | |
+| 10 | Ngữ cảnh | (chờ bộ 2) | | |
+| 11 | Giới hạn hệ thống | (chờ bộ 2) | | |
+| 12 | Ngầm | (chờ bộ 2) | | |
+| 13 | Giới hạn hệ thống | (chờ bộ 2) | | |
+| 14 | Do người dùng | (chờ bộ 2) | | |
+| 15 | Hệ thống | (chờ bộ 2) | | |
+| 16 | Ngữ cảnh | (chờ bộ 2) | | |
+| 17 | Ngầm | (chờ bộ 2) | | |
+| 18 | Ngữ cảnh | (chờ bộ 2) | | |
+| 19 | Giới hạn hệ thống | (chờ bộ 2) | | |
+| 20 | Hệ thống | (chờ bộ 2) | | |
 
-**Tỉ lệ đồng thuận:** ... / 20 = ...%
+**Tỉ lệ đồng thuận:** (chờ bộ 2) / 20
 
 ## Quy tắc phân biệt cho các ca không trùng
 
 Mỗi ca không trùng một câu. Đồng thuận dưới 80% thì ghi định nghĩa đã viết lại.
 
-- ...
+- (điền sau khi so hai bộ)
 
 ## Bảng khắc phục cho 5 ca, mỗi loại một ca
 
@@ -43,8 +45,12 @@ Cách phát hiện phải đo được (event, ngưỡng, tần suất). Ngườ
 
 | Ca | Loại lỗi | Phát hiện bằng gì | Khắc phục thế nào | Ai phụ trách |
 | --: | --- | --- | --- | --- |
-| ... | Do người dùng | ... | ... | ... |
-| ... | Hệ thống | ... | ... | ... |
-| ... | Ngữ cảnh | ... | ... | ... |
-| ... | Giới hạn hệ thống | ... | ... | ... |
-| ... | Ngầm | ... | ... | ... |
+| 1 | Do người dùng | `refund_ledger_write` có `ket_qua = loi` với mã ngân hàng "sai số tài khoản": cảnh báo khi trên 1% lệnh hoàn trong ngày, xem báo cáo hằng ngày | Kiểm tra độ dài và định dạng số tài khoản ngay trên form trước khi tạo lệnh hoàn; hiện số đã nhập để khách xác nhận lại; lệnh lỗi tự quay về hỏi khách thay vì đóng | PM trợ lý hoàn phí |
+| 20 | Hệ thống | `refund_ledger_write` có hai bản ghi cùng `request_id` hoặc `ket_qua = trung`: cảnh báo ngay từ 1 ca; đối soát sổ cái hằng ngày | Ghi sổ cái bằng `idempotency_key = request_id`, chặn lệnh thứ hai trong 24 giờ; khách gửi lại thì trả trạng thái lệnh cũ. Phải xong trước ngày bắt đầu pilot (luật dừng an toàn trong `pilot_plan.yaml` dừng ngay từ 1 ca hoàn trùng) | Kỹ sư trưởng agent |
+| 3 | Ngữ cảnh | `ticket_reopened` với `reason` "chưa nhận tiền" trong 24 giờ trên các lệnh hoàn về ví: cảnh báo khi trên 2% lệnh về ví trong tuần | Cho khách chọn nơi nhận (ví LogiX hoặc tài khoản ngân hàng) trước khi hoàn; tin nhắn ghi rõ tiền về ví nào và thời gian | Trưởng nhóm CSKH |
+| 19 | Giới hạn hệ thống | `handoff_to_staff` với `reason = thieu_du_lieu`: theo dõi số ca mỗi tuần và tỉ lệ ca có `tom_tat` (mục tiêu 100%) | Giữ cách xử lý hiện tại (nói rõ không tra được và chuyển kèm tóm tắt); thêm câu báo khách thời gian nhân viên phản hồi và chuyển thẳng tới nhóm tra cứu dữ liệu lưu trữ | Trưởng nhóm CSKH |
+| 17 | Ngầm | `audit_sample_checked` mẫu 50 đơn mỗi nhóm mỗi tuần: tỉ lệ `so_tien_da_hoan` khác `so_tien_dung` từ 1% (luật dừng lỗi ngầm trong `pilot_plan.yaml`); `agent_run_completed` ghi `pricing_version` để so với bảng giá hiện hành mỗi ngày | Xoá bộ nhớ đệm khi bảng giá đổi phiên bản, ghi `pricing_version` vào mỗi lần chạy; đối soát và hoàn bù các đơn lệch kể từ ngày đổi bảng giá | Kỹ sư trưởng agent |
+
+Năm ca trên chọn theo nhãn bộ 1; nếu nhãn thống nhất của ca nào đổi loại sau khi so, thay bằng ca khác cùng loại đã thống nhất.
+Ca 7 và ca 20 (báo đã hoàn khi sổ cái lỗi, hoàn trùng) phải chặn trước pilot, khớp điều kiện 1 của `ho_so_launch_v0.md`;
+event và ngưỡng dùng chung với `chi_so.md` (#6) và luật dừng trong `pilot_plan.yaml` (#5).
