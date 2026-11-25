@@ -26,16 +26,16 @@ Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý 
 
 | Event | Ai tạo | Thuộc tính chính | Thời điểm |
 | --- | --- | --- | --- |
-| `refund_request_created` | App khách / cổng CSKH | request_id, loai, so_tien_vnd, depot, staff_id, arm (tro_ly / doi_chung), trace_id | Khi khách gửi yêu cầu |
-| `agent_run_completed` | Agent | run_id, attempt, tokens_in, tokens_out, tool_calls, status (ok / loi), trace_id | Sau **mỗi** lần chạy, kể cả lần lỗi |
+| `refund_request_created` | App khách / cổng CSKH, sau khi máy chủ cấp mã nghiệp vụ | request_id, order_id, refund_case_id, created_at, loai, so_tien_vnd, depot, staff_id, arm (tro_ly / doi_chung), trace_id | Khi máy chủ nhận yêu cầu |
+| `agent_run_completed` | Agent | run_id, attempt, tokens_in, tokens_out, tool_calls, status (ok / loi), pricing_version, trace_id | Sau **mỗi** lần chạy, kể cả lần lỗi |
 | `agent_suggestion_shown` | Giao diện nhân viên | staff_id, so_tien_de_xuat, opened (true / false), trace_id | Khi gợi ý hiện ra và khi nhân viên mở |
 | `staff_review_decision` | Nhân viên | quyet_dinh (giu / sua / bo), phut_xem_lai đo thật, trace_id | Khi bấm gửi, sửa hoặc bỏ |
 | `staff_rework_completed` | Nhân viên | phut_lam_lai đo thật, ly_do, trace_id | Khi làm lại xong |
 | `handoff_to_staff` | Agent | reason (het_3_lan / ngoai_pham_vi / thieu_du_lieu), tom_tat, trace_id | Khi chuyển nhân viên |
-| `refund_ledger_write` | Dịch vụ sổ cái | idempotency_key, so_tien, ket_qua (ok / loi / trung), trace_id | Khi ghi hoàn tiền vào sổ cái |
+| `refund_ledger_write` | Dịch vụ sổ cái | request_id, order_id, refund_case_id, idempotency_key, ledger_entry_id (giao dịch tiền thực tế, trống nếu chưa ghi thành công), so_tien, ket_qua (ok / loi / trung), bank_error_code (nếu lỗi ngân hàng), refund_destination (ví / ngân hàng), trace_id | Khi có kết quả ghi sổ hoặc trả trạng thái nghiệp vụ cũ |
 | `ticket_closed` | Hệ thống ticket | closed_at, trace_id | Khi yêu cầu đóng |
 | `ticket_reopened` | Khách | reopened_at, reason, trace_id | Khi khách mở lại (theo dõi 7 ngày) |
-| `audit_sample_checked` | Kế toán | so_tien_da_hoan, so_tien_dung, trace_id | Hằng tuần, mẫu ngẫu nhiên |
+| `audit_sample_checked` | Kế toán | order_id, refund_case_id, ledger_entry_id, arm, sampled_at, so_tien_da_hoan, so_tien_dung, trace_id | Hằng tuần, mẫu ngẫu nhiên |
 
 **Kiểm tra chéo:** với mỗi chỉ số ở bảng E1, ghi event dùng để tính. Chỉ số nào không tính được từ danh sách event thì chưa đo được.
 
@@ -45,7 +45,8 @@ Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý 
 - **Dùng, tỉ lệ mở gợi ý (đề xuất):** `agent_suggestion_shown.opened` chia `refund_request_created` của nhóm trợ lý. Event này cũng dùng để phát hiện nhóm đối chứng dùng ké (spillover).
 - **An toàn, hoàn sai qua kiểm tra mẫu (đề xuất):** `audit_sample_checked`. Đây là cách duy nhất thấy lỗi ngầm, vì lỗi ngầm không sinh `ticket_reopened`.
 - **Chi phí mỗi việc thành công:** `agent_run_completed` (token và tool của mọi lần chạy, kể cả lỗi) + `staff_review_decision.phut_xem_lai` + `staff_rework_completed.phut_lam_lai` (thay phút **simulated** bằng phút đo thật), chia số yêu cầu thành công từ `ticket_closed` / `ticket_reopened`.
-- **Luật dừng hoàn trùng** (`pilot_plan.yaml`): `refund_ledger_write` có `ket_qua = trung` hoặc hai bản ghi cùng request_id.
+- **Luật dừng hoàn trùng** (`pilot_plan.yaml`): nhóm `refund_ledger_write` có `ket_qua = ok` theo `refund_case_id`, đếm các `ledger_entry_id` riêng biệt; từ 2 giao dịch thành công trong cùng nghiệp vụ là hoàn trùng thực tế. Nhiều event của cùng một `ledger_entry_id` chỉ đếm một giao dịch. `ket_qua = trung` chỉ là lượt gửi lại đã bị chặn, theo dõi riêng; một khách gửi lại với `request_id` mới vẫn phải giữ nguyên `refund_case_id`.
+- **Liên kết với bảng lỗi C:** ca 1 theo `bank_error_code`; ca 3 nối `ticket_reopened` với `refund_destination`; ca 17 đối chiếu `pricing_version` và kết quả kiểm tra mẫu. `refund_case_id` do máy chủ xác định từ đơn hàng, loại hoàn và sự kiện đủ điều kiện; `idempotency_key = refund_case_id` giữ suốt vòng đời nghiệp vụ. Đây là đặc tả cần triển khai và kiểm chứng trước pilot.
 
 ## E2 · Rủi ro kinh tế
 
