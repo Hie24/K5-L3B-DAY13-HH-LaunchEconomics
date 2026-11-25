@@ -4,30 +4,34 @@
 
 ## Hai bộ nhãn độc lập
 
-Người gắn nhãn 1: ... · Người gắn nhãn 2: ... (gắn trong 8 phút, không trao đổi)
+Người gắn nhãn 1: ... · Người phụ trách bộ nhãn 2: DoLyHoangNam (issue #8).
 
-| Ca | Nhãn người 1 | Nhãn người 2 | Trùng? | Nhãn thống nhất |
+Bộ nhãn 2 dưới đây do Codex đề xuất ngày 2026-11-25 từ mô tả 20 ca trong đề Word, chờ Nam kiểm tra và xác nhận. Cuộc trò chuyện đã tiếp cận nhãn tham khảo trước khi soạn bộ này, nên đây chưa phải bằng chứng của một lượt gắn nhãn độc lập trong 8 phút. Nếu Nam đã lưu bộ nhãn độc lập trước đó, dùng bản gốc có bằng chứng ấy khi tổng hợp. Chưa tính đồng thuận hoặc thống nhất nhãn; phần review D của issue #8 chưa thực hiện.
+
+| Ca | Nhãn người 1 | Nhãn bộ 2 (AI đề xuất) | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
-| 1 | ... | ... | ... | ... |
-| 2 | ... | ... | ... | ... |
-| 3 | ... | ... | ... | ... |
-| 4 | ... | ... | ... | ... |
-| 5 | ... | ... | ... | ... |
-| 6 | ... | ... | ... | ... |
-| 7 | ... | ... | ... | ... |
-| 8 | ... | ... | ... | ... |
-| 9 | ... | ... | ... | ... |
-| 10 | ... | ... | ... | ... |
-| 11 | ... | ... | ... | ... |
-| 12 | ... | ... | ... | ... |
-| 13 | ... | ... | ... | ... |
-| 14 | ... | ... | ... | ... |
-| 15 | ... | ... | ... | ... |
-| 16 | ... | ... | ... | ... |
-| 17 | ... | ... | ... | ... |
-| 18 | ... | ... | ... | ... |
-| 19 | ... | ... | ... | ... |
-| 20 | ... | ... | ... | ... |
+| 1 | ... | Do người dùng | ... | ... |
+| 2 | ... | Hệ thống | ... | ... |
+| 3 | ... | Ngữ cảnh | ... | ... |
+| 4 | ... | Giới hạn hệ thống | ... | ... |
+| 5 | ... | Ngầm | ... | ... |
+| 6 | ... | Do người dùng | ... | ... |
+| 7 | ... | Hệ thống | ... | ... |
+| 8 | ... | Hệ thống | ... | ... |
+| 9 | ... | Do người dùng | ... | ... |
+| 10 | ... | Ngữ cảnh | ... | ... |
+| 11 | ... | Giới hạn hệ thống | ... | ... |
+| 12 | ... | Ngầm | ... | ... |
+| 13 | ... | Giới hạn hệ thống | ... | ... |
+| 14 | ... | Do người dùng | ... | ... |
+| 15 | ... | Hệ thống | ... | ... |
+| 16 | ... | Ngữ cảnh | ... | ... |
+| 17 | ... | Ngầm | ... | ... |
+| 18 | ... | Ngữ cảnh | ... | ... |
+| 19 | ... | Giới hạn hệ thống | ... | ... |
+| 20 | ... | Hệ thống | ... | ... |
+
+Tổng bộ 2: **4** Do người dùng · **5** Hệ thống · **4** Ngữ cảnh · **4** Giới hạn hệ thống · **3** Ngầm = **20 ca**.
 
 **Tỉ lệ đồng thuận:** ... / 20 = ...%
 
