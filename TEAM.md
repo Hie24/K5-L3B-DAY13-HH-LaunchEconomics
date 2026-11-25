@@ -13,7 +13,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Nguyễn Đức Hiếu | (Hiếu điền) | (Hiếu điền) | Hie24 | Nhóm trưởng; người viết code A1–A4 (#1, #2); tích hợp, duyệt chéo Gate 2a, nộp bài (#9) |
-|   2 | Đỗ Lý Hoàng Nam | 2A202603777 | (Nam điền) | DoLyHoangNam | Người gắn nhãn 2 kiêm giữ hồ sơ; độ nhạy B1–B4 (#3), hồ sơ launch và báo cáo nhóm (#7), review D (#8) |
+|   2 | Đỗ Lý Hoàng Nam | 2A202603777 | dolyhoangnam13072005@gmail.com | DoLyHoangNam | Người gắn nhãn 2 kiêm giữ hồ sơ; độ nhạy B1–B4 (#3), hồ sơ launch và báo cáo nhóm (#7), review D (#8) |
 |   3 | Lê Ngọc Khánh | 2A202603804 | lekhanh2k5@gmail.com | lekhanh2k5-dotcom | Người gắn nhãn 1; viết code và kiểm số D (#5), E1–E2 (#6); tổng hợp bảng lỗi C (#4) |
 
 Bốn vai của lab:
@@ -70,3 +70,22 @@ Sao chép mục dưới đây cho từng thành viên.
 
 - PR #10, #12, #15; commit `64f445a` (bộ nhãn 1 lúc 15:02:06), `ddc23d5` (D1), `f04a3e2` (E1).
 - Báo cáo cá nhân: `report/team/2A202603804_LeNgocKhanh.md`.
+
+## DoLyHoangNam-2A202603777
+
+### Phần việc phụ trách
+
+- #3 [B1–B4] Phân tích độ nhạy 9 kịch bản, giới hạn chạy lại và kịch bản xem lại 100% (`src/lab13.py`, `report/team/bang_chi_phi.md`).
+- #7 [E3] Tổng hợp hồ sơ launch v0 một trang (`report/team/ho_so_launch_v0.md`) và báo cáo nhóm (`report/team/group_report.md`).
+- #8 [C + review D] Gắn nhãn độc lập bộ 2 (20 ca lỗi) và kiểm tra chéo cỡ mẫu D1/D2 cho `pilot_plan.yaml`.
+
+### Đóng góp cụ thể
+
+- Viết `chay_nhiem_vu_b()` và điền mục B1–B4 trong `bang_chi_phi.md`: đối xứng x2/÷2, top 3 yếu tố nhạy nhất (làm lại +51,8%, xem lại +40,7%, lương +23,1%), giới hạn 2 lần chạy rẻ nhất toàn hệ thống (6.901.220 đ), và cảnh báo xem lại 100% (11.743–12.415 đ chưa cố định; 12.928–13.600 đ có cố định, `simulated`).
+- Hoàn thiện hồ sơ `ho_so_launch_v0.md` (7 mục, đề xuất **Go có điều kiện** kèm 4 điều kiện có vai trò và mốc ngày khớp `pilot_plan.yaml`) và `group_report.md` (8 mục).
+- Lưu bản gốc bộ nhãn độc lập 2 tại `report/team/nhan_doc_lap_bo2_DoLyHoangNam.md` (20/20 đồng thuận với bộ 1, khớp tham khảo 20/20) và kiểm tra chéo đạt toàn bộ D1/D2 của `pilot_plan.yaml`.
+
+### Bằng chứng
+
+- PR #13 (nhánh `DoLyHoangNam_2A202603777`), PR #14, cùng bản gốc `report/team/nhan_doc_lap_bo2_DoLyHoangNam.md`.
+- Báo cáo cá nhân: `report/team/2A202603777_DoLyHoangNam.md`.
