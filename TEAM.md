@@ -5,7 +5,7 @@
 - Tên nhóm: HH
 - Lớp: L3B
 - Repo nhóm: `K5-L3B-DAY13-HH-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/Hie24/K5-L3B-DAY13-HH-LaunchEconomics · nhánh `main` · commit chốt: (ghi lúc nộp)
+- URL repo, nhánh nộp, commit chốt: https://github.com/Hie24/K5-L3B-DAY13-HH-LaunchEconomics · nhánh `main` · commit chốt: [`158c1be`](https://github.com/Hie24/K5-L3B-DAY13-HH-LaunchEconomics/commit/158c1be6f802e442cf585ed62696edc2531d62e3) (nội dung bài nộp; commit sau đó chỉ ghi dòng này)
 - Nhóm có 3 thành viên nên kiêm nhiệm bốn vai (phân công theo issue #1–#9).
 
 ## Thành viên
