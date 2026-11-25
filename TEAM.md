@@ -63,7 +63,7 @@ Sao chép mục dưới đây cho từng thành viên.
 
 - D1 năm câu (1.251 · DE 2,48, 84 > 40 · trần 1.000 · trần 300 · m ≥ 299, DE 6,96), power 0,64; pilot 20 + 20 nhân viên, 4 luật dừng, quyết định 2027-01-12.
 - E1: 82,83% · 27,12% · 4,25%; 2 chỉ số đề xuất, 10 event có `trace_id`, 3 dòng rủi ro kinh tế.
-- C: bộ nhãn 1 khoá trước khi xem bộ 2; đồng thuận 20/20; bảng khắc phục 5 ca.
+- C: bộ nhãn 1 khoá ở commit `64f445a` trước khi xem bộ 2; hai cột trùng 20/20 theo số học, nghiệm thu C chờ Nam xác nhận bộ 2 ở issue #8; bảng khắc phục 5 ca.
 - Giải xung đột `src/lab13.py` (B và D1), hạ ngưỡng luật dừng chi phí từ 10.000 đ xuống 6.000 đ có lý do bằng số.
 
 ### Bằng chứng
