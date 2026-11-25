@@ -6,38 +6,40 @@
 
 Người gắn nhãn 1: lekhanh2k5-dotcom (Lê Ngọc Khánh, issue #4) · Người gắn nhãn 2: DoLyHoangNam (Đỗ Lý Hoàng Nam, issue #8) (gắn trong 8 phút, không trao đổi)
 
-Bằng chứng độc lập: bộ 1 được khoá trong commit `64f445a` lúc 15:02:06 ngày 25/11, trước khi xem bộ 2 (file `report/team/nhan_doc_lap_bo1_lekhanh2k5.md`). Hai bộ ban đầu giữ nguyên; chỉ cột "Nhãn thống nhất" được điền sau khi so.
+Bằng chứng độc lập: bộ 1 được khoá trong commit `64f445a` lúc 15:02:06 ngày 25/11, trước khi xem bộ 2 (file `report/team/nhan_doc_lap_bo1_lekhanh2k5.md`). Bộ 2 được đẩy lên repo lúc 16:33 ngày 25/11 (nhánh `feat/issue-8-c-labels-2`, commit `cc1a0a7`); Nam xác nhận qua nhóm chat của nhóm (16:39 ngày 25/11, Khánh ghi nhận) rằng bộ 2 là lượt gắn nhãn độc lập của mình. Hai bộ ban đầu giữ nguyên; chỉ cột "Nhãn thống nhất" được điền sau khi so.
 
 | Ca | Nhãn người 1 | Nhãn người 2 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
-| 1 | Do người dùng | (chờ bộ 2) | | |
-| 2 | Hệ thống | (chờ bộ 2) | | |
-| 3 | Ngữ cảnh | (chờ bộ 2) | | |
-| 4 | Giới hạn hệ thống | (chờ bộ 2) | | |
-| 5 | Ngầm | (chờ bộ 2) | | |
-| 6 | Do người dùng | (chờ bộ 2) | | |
-| 7 | Hệ thống | (chờ bộ 2) | | |
-| 8 | Hệ thống | (chờ bộ 2) | | |
-| 9 | Do người dùng | (chờ bộ 2) | | |
-| 10 | Ngữ cảnh | (chờ bộ 2) | | |
-| 11 | Giới hạn hệ thống | (chờ bộ 2) | | |
-| 12 | Ngầm | (chờ bộ 2) | | |
-| 13 | Giới hạn hệ thống | (chờ bộ 2) | | |
-| 14 | Do người dùng | (chờ bộ 2) | | |
-| 15 | Hệ thống | (chờ bộ 2) | | |
-| 16 | Ngữ cảnh | (chờ bộ 2) | | |
-| 17 | Ngầm | (chờ bộ 2) | | |
-| 18 | Ngữ cảnh | (chờ bộ 2) | | |
-| 19 | Giới hạn hệ thống | (chờ bộ 2) | | |
-| 20 | Hệ thống | (chờ bộ 2) | | |
+| 1 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 2 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 3 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 4 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 5 | Ngầm | Ngầm | Có | Ngầm |
+| 6 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 7 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 8 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 9 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 10 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 11 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 12 | Ngầm | Ngầm | Có | Ngầm |
+| 13 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 14 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 15 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 16 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 17 | Ngầm | Ngầm | Có | Ngầm |
+| 18 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 19 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 20 | Hệ thống | Hệ thống | Có | Hệ thống |
 
-**Tỉ lệ đồng thuận:** (chờ bộ 2) / 20
+**Tỉ lệ đồng thuận:** 20 / 20 = 100% (≥ 80%)
+
+**Đối chiếu nhãn tham khảo (chỉ sau khi cả hai bộ đã khoá):** nhãn thống nhất khớp 20/20 ca (yêu cầu ≥ 16/20).
 
 ## Quy tắc phân biệt cho các ca không trùng
 
 Mỗi ca không trùng một câu. Đồng thuận dưới 80% thì ghi định nghĩa đã viết lại.
 
-- (điền sau khi so hai bộ)
+- Không có ca lệch: hai bộ trùng cả 20 ca nên không cần quy tắc phân biệt hay viết lại định nghĩa.
 
 ## Bảng khắc phục cho 5 ca, mỗi loại một ca
 
