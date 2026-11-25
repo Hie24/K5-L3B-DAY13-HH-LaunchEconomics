@@ -1,6 +1,6 @@
 """Lab 13 · Định giá agent và lập kế hoạch pilot (Gate 2a) — bài làm của nhóm (file nộp).
 Chạy trong thư mục src/: python3 lab13.py   (cần pandas; Nhiệm vụ D cần thêm statsmodels)
-Không cần khoá API. Nhiệm vụ A1–A4 đã hoàn thiện; CP2 và CP4 được nhóm bổ sung sau.
+Không cần khoá API. Nhiệm vụ A1–A4 và B1–B4 đã hoàn thiện; CP4 được nhóm bổ sung sau.
 Dữ liệu trong hai file CSV là giả lập; chi phí có dùng phút nhân viên mang nhãn simulated.
 Bản gốc chưa sửa nằm ở lab13_starter.py.
 
@@ -216,6 +216,106 @@ def in_bang_nhiem_vu_a(runs, reqs):
     }))
 
 
+# ---------- Nhiệm vụ B · Bảng độ nhạy, giới hạn chạy lại và xem lại 100% ----------
+def chay_nhiem_vu_b(runs, reqs):
+    """In B1–B4 và trả số liệu chưa làm tròn để kiểm chứng, dùng lại trong hồ sơ."""
+    goc = mo_hinh(runs, reqs)
+    cps_goc = goc['cps']
+
+    print('\n=== B1 · Bảng độ nhạy (9 kịch bản) [simulated] ===')
+    kich_ban = [
+        ('Giá token gấp đôi',          dict(gia_vao=52, gia_ra=260)),
+        ('Giá token giảm một nửa',     dict(gia_vao=13, gia_ra=65)),
+        ('Tỉ lệ xem lại gấp đôi',      dict(he_so_xem_lai=2.0)),
+        ('Tỉ lệ xem lại giảm một nửa', dict(he_so_xem_lai=0.5)),
+        ('Số ca làm lại gấp đôi',      dict(he_so_lam_lai=2.0)),
+        ('Số ca làm lại giảm một nửa', dict(he_so_lam_lai=0.5)),
+        ('Lương nhân viên tăng 25%',   dict(luong_phut=2500)),
+        ('Chỉ cho chạy tối đa 2 lần',  dict(max_lan_chay=2)),
+        ('Chỉ cho chạy 1 lần',         dict(max_lan_chay=1)),
+    ]
+    bang_b1 = []
+    for ten, kw in kich_ban:
+        cps = mo_hinh(runs, reqs, **kw)['cps']
+        pct = (cps / cps_goc - 1) * 100
+        bang_b1.append(dict(kich_ban=ten, cps=cps, thay_doi_pct=pct))
+        print(f'{ten:28s} {cps:8,.0f} đ ({pct:+6.1f}%)')
+
+    print('\n=== B2 · Đổi một cặp [simulated] ===')
+    cap = mo_hinh(runs, reqs, gia_vao=52, gia_ra=260, he_so_xem_lai=2.0)['cps']
+    print(f'Token x2 + Xem lại x2: {cap:,.0f} đ ({(cap / cps_goc - 1) * 100:+.1f}%)')
+    cac_yeu_to_tang = [dong for dong in bang_b1 if dong['kich_ban'] in (
+        'Giá token gấp đôi', 'Tỉ lệ xem lại gấp đôi',
+        'Số ca làm lại gấp đôi', 'Lương nhân viên tăng 25%',
+    )]
+    xep_hang = sorted(cac_yeu_to_tang, key=lambda dong: dong['thay_doi_pct'], reverse=True)[:3]
+    print('Ba yếu tố nhạy nhất (kịch bản tăng của B1): ' + ' · '.join(
+        f'{i}. {dong["kich_ban"]} ({dong["thay_doi_pct"]:+.1f}%)'
+        for i, dong in enumerate(xep_hang, start=1)
+    ))
+
+    print(f'\n=== B3 · Chi phí cả hệ thống theo giới hạn chạy lại ({len(reqs)} yêu cầu) [simulated] ===')
+    bang_b3 = []
+    for k in (1, 2, 3):
+        kq = mo_hinh(runs, reqs, max_lan_chay=k)
+        khong_tc = len(reqs) - kq['thanh_cong']
+        ca_he_thong = kq['tong'] + khong_tc * BASELINE
+        bang_b3.append(dict(gioi_han=k, tong=kq['tong'], khong_thanh_cong=khong_tc,
+                            ca_he_thong=ca_he_thong, cps=kq['cps']))
+        print(f'k={k} | trợ lý={kq["tong"]:10,.0f} đ | không TC={khong_tc:3d} | '
+              f'cả hệ thống={ca_he_thong:10,.0f} đ | cps={kq["cps"]:6,.0f} đ')
+
+    pv = reqs[reqs['loai'].isin(['noi_dia', 'hang_nang'])]
+    bang_b3_pilot = []
+    print('Đối chiếu riêng phạm vi pilot (chưa gồm cố định) [simulated]:')
+    for k in (1, 2, 3):
+        kq_pilot = mo_hinh(runs, pv, max_lan_chay=k)
+        he_thong_pilot = chi_phi_he_thong_moi_yeu_cau(kq_pilot, len(pv))
+        bang_b3_pilot.append(dict(gioi_han=k, cps=kq_pilot['cps'],
+                                 he_thong_moi_yc=he_thong_pilot))
+        print(f'k={k}: cps={kq_pilot["cps"]:,.2f} đ; hệ thống={he_thong_pilot:,.2f} đ/yêu cầu')
+    print('\n=== B4 · Xem lại 100% (noi_dia + hang_nang) [simulated] ===')
+    runs_pv = runs[runs['request_id'].isin(pv['request_id'])]
+    req_co_ok = runs_pv[runs_pv['status'] == 'ok']['request_id'].nunique()
+    ca_lam_lai = (pv['ket_qua'] == 'lam_lai').sum()
+    so_tc_pv = (pv['ket_qua'] == 'thanh_cong').sum()
+    tok_tool_pv = (
+        runs_pv['tokens_in'] / 1000 * GIA_VAO
+        + runs_pv['tokens_out'] / 1000 * GIA_RA
+        + runs_pv['tool_calls'] * GIA_TOOL
+    ).sum()
+    xem_lai_100 = req_co_ok * 5 * LUONG_PHUT
+    lam_lai_9 = ca_lam_lai * 9 * LUONG_PHUT
+    tong_9 = tok_tool_pv + xem_lai_100 + lam_lai_9
+    cps_9 = tong_9 / so_tc_pv
+    mean_ll = reqs.loc[reqs['ket_qua'] == 'lam_lai', 'phut_lam_lai_simulated'].mean()
+    lam_lai_tt = ca_lam_lai * mean_ll * LUONG_PHUT
+    tong_tt = tok_tool_pv + xem_lai_100 + lam_lai_tt
+    cps_tt = tong_tt / so_tc_pv
+    hoa_von_9 = (BASELINE * so_tc_pv - tok_tool_pv - lam_lai_9) / (req_co_ok * LUONG_PHUT)
+    hoa_von_tt = (BASELINE * so_tc_pv - tok_tool_pv - lam_lai_tt) / (req_co_ok * LUONG_PHUT)
+    co_dinh_moi_viec = bang_chi_phi_co_dinh(runs, reqs).iloc[0]['co_dinh_moi_viec']
+    print(f'Mẫu số={so_tc_pv} việc TC | ok={req_co_ok} | lam_lai={ca_lam_lai} | tok+tool={tok_tool_pv:,.0f} đ')
+    print(f'Làm lại 9 phút/ca:    tổng={tong_9:,.0f} đ | cps={cps_9:,.0f} đ ({cps_9 / BASELINE:.2f}x)')
+    print(f'Làm lại {mean_ll:.1f} phút/ca: tổng={tong_tt:,.0f} đ | cps={cps_tt:,.0f} đ ({cps_tt / BASELINE:.2f}x)')
+    print(f'Hòa vốn thời gian xem lại (chưa cố định): {hoa_von_9:.2f} phút (làm lại 9 phút); '
+          f'{hoa_von_tt:.2f} phút (làm lại theo dữ liệu) [simulated]')
+    print(f'Cộng cố định ở {YEU_CAU_MOI_THANG:,} yêu cầu tổng/tháng: '
+          f'{cps_9 + co_dinh_moi_viec:,.2f} đ/việc (9 phút); '
+          f'{cps_tt + co_dinh_moi_viec:,.2f} đ/việc (theo dữ liệu) [simulated]')
+    return dict(
+        goc=goc, b1=bang_b1, b2=cap, xep_hang=xep_hang,
+        b3=bang_b3, b3_pilot=bang_b3_pilot,
+        b4=dict(so_yeu_cau=len(pv), co_ok=req_co_ok, lam_lai=int(ca_lam_lai),
+                thanh_cong=int(so_tc_pv), token_tool=float(tok_tool_pv),
+                tong_9=float(tong_9), cps_9=float(cps_9),
+                phut_lam_lai_du_lieu=float(mean_ll), cps_du_lieu=float(cps_tt),
+                hoa_von_9=float(hoa_von_9), hoa_von_du_lieu=float(hoa_von_tt),
+                cps_9_co_dinh=float(cps_9 + co_dinh_moi_viec),
+                cps_du_lieu_co_dinh=float(cps_tt + co_dinh_moi_viec)),
+    )
+
+
 # ---------- Nhiệm vụ D1 · Cỡ mẫu pilot (issue #5, lekhanh2k5-dotcom) ----------
 # TODO CP4: số cho sẵn của lab: baseline 0,70; mục tiêu +5 điểm; alpha 0,05; power 0,8; ICC 0,02.
 BASE_P = 0.70
@@ -298,6 +398,6 @@ if __name__ == '__main__':
     reqs = pd.read_csv('logix_requests.csv', keep_default_na=False)
     kiem_tra_dap_an_biet_truoc()
     in_bang_nhiem_vu_a(runs, reqs)
-    # TODO CP2 · Nhiệm vụ B: đổi từng yếu tố, ghi vào bảng độ nhạy.
+    chay_nhiem_vu_b(runs, reqs)
     # CP4 · Nhiệm vụ D1: cỡ mẫu (issue #5).
     nhiem_vu_d1(reqs)
