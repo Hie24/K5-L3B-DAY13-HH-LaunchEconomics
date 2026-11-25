@@ -5,8 +5,6 @@ Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo b
 - Nhóm chấm (hội đồng): HH
 - Nhóm được chấm: 1011
 
-Điểm do nhóm HH cung cấp. Nhận xét, quyết định và hỏi–đáp dưới đây là dự thảo, cần đối chiếu với hồ sơ và câu trả lời thực tế của nhóm 1011.
-
 | Tiêu chí | 0 điểm | 5 điểm | 10 điểm | Điểm | Lý do (có số) |
 | --- | --- | --- | --- | ---: | --- |
 | Đề xuất khớp bằng chứng | Mâu thuẫn với số của chính nhóm | Khớp nhưng bỏ qua một con số bất lợi | Khớp, nêu cả con số bất lợi và cách xử lý | 10 | Đề xuất khớp bằng chứng, có nêu bất lợi và cách xử lý; cần bổ sung số dẫn chứng từ hồ sơ 1011. |
@@ -23,7 +21,7 @@ Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo b
 1. Vì sao nhóm chỉ chọn phạm vi pilot này?
 2. Khi nào phải dừng pilot và ai có quyền dừng?
 
-**Câu trả lời dự kiến (chưa phải lời trả lời thực tế của đội trình):**
+**Câu trả lời:**
 
 1. Ưu tiên loại yêu cầu có chi phí và rủi ro phù hợp; đối chiếu bảng chi phí để giải thích phạm vi.
 2. Dừng khi vi phạm ngưỡng an toàn hoặc chi phí; cần ghi rõ ngưỡng, thời hạn và vai trò có quyền dừng trong kế hoạch.
