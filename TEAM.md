@@ -12,7 +12,7 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Nguyễn Đức Hiếu | 2A202603772 | 11236106@st.neu.edu.vn | Hie24 | Nhóm trưởng; người viết code A1–A4 (#1, #2); tích hợp, duyệt chéo Gate 2a, nộp bài (#9) |
+|   1 | Nguyễn Đức Hiếu | 2A202603772 | hdt24022005@gmail.com | Hie24 | Nhóm trưởng; người viết code A1–A4 (#1, #2); tích hợp, duyệt chéo Gate 2a, nộp bài (#9) |
 |   2 | Đỗ Lý Hoàng Nam | 2A202603777 | dolyhoangnam13072005@gmail.com | DoLyHoangNam | Người gắn nhãn 2 kiêm giữ hồ sơ; độ nhạy B1–B4 (#3), hồ sơ launch và báo cáo nhóm (#7), review D (#8) |
 |   3 | Lê Ngọc Khánh | 2A202603804 | lekhanh2k5@gmail.com | lekhanh2k5-dotcom | Người gắn nhãn 1; viết code và kiểm số D (#5), E1–E2 (#6); tổng hợp bảng lỗi C (#4) |
 

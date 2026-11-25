@@ -4,7 +4,7 @@
 
 - Họ tên: Nguyễn Đức Hiếu
 - MSSV: 2A202603772
-- Email: 11236106@st.neu.edu.vn
+- Email: hdt24022005@gmail.com
 - Nhóm HH · Lớp L3B · GitHub: Hie24
 - Vai trò: Nhóm trưởng, người viết code và kiểm số A1–A4, phụ trách tích hợp và kiểm tra cuối.
 
